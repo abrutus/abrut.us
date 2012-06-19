@@ -1,42 +1,32 @@
 ---
-layout: default
+layout: base
+single: true
 ---
 
-<div>
-<article role="article">
-  {% if page.title %}
-  <header>
-    <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
-    {% if page.date %}<p class="meta">{% include post/date.html %}{{ time }}</p>{% endif %}
-  </header>
-  {% endif %}
-  {{ content }}
-  {% unless page.footer == false %}
-    <footer>
-      {% if page.date or page.author %}<p class="meta">
-        {% if page.author %}{% include post/author.html %}{% endif %}
-        {% include post/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}
-        {% if page.categories %}{% include post/categories.html %}{% endif %}
-      </p>{% endif %}
-      {% unless page.sharing == false %}
-        {% include post/sharing.html %}
-      {% endunless %}
-    </footer>
-  {% endunless %}
-</article>
-{% if site.disqus_short_name and page.comments == true %}
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
-  </section>
-{% endif %}
+<div class="post-header">
+    {% if index %}
+    <h1 class="post-title">
+        <a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a>
+    </h1>
+    {% else %}
+    <h1 class="post-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
+    {% endif %}
 </div>
-{% unless page.sidebar == false %}
-<aside class="sidebar">
-  {% if site.page_asides.size %}
-    {% include_array page_asides %}
-  {% else %}
-    {% include_array default_asides %}
+
+<div class="post-content">{{ content }}</div>
+
+<div class="post-single">
+  <div class="post-meta">
+    {% unless page.sharing == false %}
+      {% include post/sharing.html %}
+    {% endunless %}
+  </div>
+  <div class="clear"></div>
+
+  {% if site.disqus_short_name and page.comments == true %}
+    <div id="comments">
+        <h2>Comments</h2>
+        <div id="disqus_thread" aria-live="polite"></div>
+    </div>
   {% endif %}
-</aside>
-{% endunless %}
+</div>

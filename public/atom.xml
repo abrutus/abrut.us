@@ -4,7 +4,7 @@
   <title><![CDATA[Andre Brutus]]></title>
   <link href="http://abrut.us/atom.xml" rel="self"/>
   <link href="http://abrut.us/"/>
-  <updated>2012-06-19T08:12:10-04:00</updated>
+  <updated>2012-06-19T09:50:07-04:00</updated>
   <id>http://abrut.us/</id>
   <author>
     <name><![CDATA[Andre Brutus]]></name>
@@ -12,5 +12,14 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ninjas cutting onions]]></title>
+    <link href="http://abrut.us/blog/2012/06/19/ninjas-cutting-onions/"/>
+    <updated>2012-06-19T08:26:00-04:00</updated>
+    <id>http://abrut.us/blog/2012/06/19/ninjas-cutting-onions</id>
+    <content type="html"><![CDATA[<p>Hello Octopress</p>
+]]></content>
+  </entry>
   
 </feed>
