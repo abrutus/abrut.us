@@ -1,11 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://yoursite.com/blog/archives/</loc>
-        <lastmod>2012-06-09T01:20:10-04:00</lastmod>
+        <loc>http://abrut.us/blog/archives/</loc>
+        <lastmod>2012-06-19T08:01:05-04:00</lastmod>
     </url>
     <url>
-        <loc>http://yoursite.com/</loc>
-        <lastmod>2012-06-09T01:20:10-04:00</lastmod>
+        <loc>http://abrut.us/</loc>
+        <lastmod>2012-06-19T08:01:05-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://abrut.us/feed/index.xml</loc>
+        <lastmod>2012-06-19T08:01:05-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://abrut.us/about/</loc>
+        <lastmod>2012-06-19T08:11:25-04:00</lastmod>
     </url>
 </urlset>
