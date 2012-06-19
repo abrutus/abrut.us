@@ -4,7 +4,7 @@
 
 url: http://abrut.us
 title: Andre Brutus
-subtitle: Thoughts of a Sofware Engineer.
+subtitle: pipe it into vim -
 author: Andre Brutus
 simple_search: http://google.com/search
 description:
@@ -89,8 +89,8 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
-disqus_show_comment_count: false
+disqus_short_name: "abrutuss"
+disqus_show_comment_count: true
 
 # Google Analytics
 google_analytics_tracking_id:

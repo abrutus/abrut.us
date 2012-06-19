@@ -4,7 +4,7 @@
   <title><![CDATA[Andre Brutus]]></title>
   <link href="http://abrut.us/feed" rel="self"/>
   <link href="http://abrut.us/"/>
-  <updated>2012-06-19T09:50:07-04:00</updated>
+  <updated>2012-06-19T10:46:16-04:00</updated>
   <id>http://abrut.us/</id>
   <author>
     <name><![CDATA[Andre Brutus]]></name>
@@ -14,11 +14,33 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Ninjas cutting onions]]></title>
+    <title type="html"><![CDATA[On blogging engineering]]></title>
     <link href="http://abrut.us/blog/2012/06/19/ninjas-cutting-onions/"/>
     <updated>2012-06-19T08:26:00-04:00</updated>
     <id>http://abrut.us/blog/2012/06/19/ninjas-cutting-onions</id>
-    <content type="html"><![CDATA[<p>Hello Octopress</p>
+    <content type="html"><![CDATA[<p>You&#8217;ve landed. Here I blog mostly about issues that arise out of the technology I employ(Django, CodeIgniter, jQuery, Bootstrap) and the ones I&#8217;m learning (Scala and Ruby). Ocassionally, you&#8217;ll hear me describe architectures.
+Drop me a line in the comments, twitter or github. I&#8217;ll be around <strong>(I promise)</strong></p>
+
+<p>And here is a hello world for syntax highlighting:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="c1">// Operator for Overloading</span>
+</span><span class='line'><span class="k">object</span> <span class="nc">operator</span>
+</span><span class='line'><span class="o">{</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">operation</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+</span><span class='line'>    <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 ]]></content>
   </entry>
   
