@@ -33,6 +33,4 @@ Some hope (from the [Wiki](http://en.wikipedia.org/wiki/Broken_windows_theory) a
 
 And apparently similar success occurred in Albuquerque, Massachusetts(20% drop in calls to the police) and even the Netherlands.
 
-I know what I'm going to do: fix those windows and allow this thought to influence me to write great software. You?
-
 Feel free to drop me a line in the comment section below.
