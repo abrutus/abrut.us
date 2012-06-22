@@ -35,4 +35,4 @@ And apparently similar success occurred in Albuquerque, Massachusetts(20% drop i
 
 I know what I'm going to do: fix those windows and allow this thought to influence me to write great software. You?
 
-Feel free to drop me a line in the comments.
+Feel free to drop me a line in the comment section below.
