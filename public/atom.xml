@@ -4,7 +4,7 @@
   <title><![CDATA[Andre Brutus]]></title>
   <link href="http://abrut.us/atom.xml" rel="self"/>
   <link href="http://abrut.us/"/>
-  <updated>2012-06-22T14:06:24-04:00</updated>
+  <updated>2012-06-22T14:36:20-04:00</updated>
   <id>http://abrut.us/</id>
   <author>
     <name><![CDATA[Andre Brutus]]></name>
@@ -35,7 +35,7 @@
 
 <p>A broken window in an abandoned car conveys an idea of deterioration, lack of interest, carelessness that breaks codes of coexistence, and it resembles the absence of law, norm or rules. Every new attack suffered by the auto reaffirms and multiplies the idea, until the escalation of events, getting worse, becomes uncontrollable, leading to irrational violence.</p>
 
-<p>In later experiments (James Q. Wilson and George Kelling) developed the &#8216;broken windows theory&#8217;, from a criminological point of view concluding that crime is higher in areas where neglect, dirt, disorder and abuse are higher.</p></blockquote>
+<p>In later experiments (James Q. Wilson and George Kelling) developed the &#8216;broken windows theory&#8217;, from a criminology point of view concluding that crime is higher in areas where neglect, dirt, disorder and abuse are higher.</p></blockquote>
 
 <p>This article got my mind running. What If the same principle is applied to Software Engineering?</p>
 
@@ -50,8 +50,6 @@
 <p>According to the 2001 study of crime trends in New York by George Kelling and William Sousa,[3] rates of both petty and serious crime fell suddenly and significantly, and continued to drop for the following ten years.</p></blockquote>
 
 <p>And apparently similar success occurred in Albuquerque, Massachusetts(20% drop in calls to the police) and even the Netherlands.</p>
-
-<p>I know what I&#8217;m going to do: fix those windows and allow this thought to influence me to write great software. You?</p>
 
 <p>Feel free to drop me a line in the comment section below.</p>
 ]]></content>
