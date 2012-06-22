@@ -18,7 +18,7 @@ Recently, I stumbled upon an interesting email. It was in Spanish([found it](htt
 
 >A broken window in an abandoned car conveys an idea of deterioration, lack of interest, carelessness that breaks codes of coexistence, and it resembles the absence of law, norm or rules. Every new attack suffered by the auto reaffirms and multiplies the idea, until the escalation of events, getting worse, becomes uncontrollable, leading to irrational violence.
 
->In later experiments (James Q. Wilson and George Kelling) developed the 'broken windows theory', from a criminological point of view concluding that crime is higher in areas where neglect, dirt, disorder and abuse are higher.
+>In later experiments (James Q. Wilson and George Kelling) developed the 'broken windows theory', from a criminology point of view concluding that crime is higher in areas where neglect, dirt, disorder and abuse are higher.
 
 This article got my mind running. What If the same principle is applied to Software Engineering?
 
