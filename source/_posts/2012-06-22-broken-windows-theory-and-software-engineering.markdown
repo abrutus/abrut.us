@@ -34,3 +34,5 @@ Some hope (from the [Wiki](http://en.wikipedia.org/wiki/Broken_windows_theory) a
 And apparently similar success occurred in Albuquerque, Massachusetts(20% drop in calls to the police) and even the Netherlands.
 
 Feel free to drop me a line in the comment section below.
+
+UPDATE: From the comments (below and reddit), it seems that this topic was covered previously by the Pragmatic Programmer and I recommend you [read it here](http://pragprog.com/the-pragmatic-programmer/extracts/software-entropy).
