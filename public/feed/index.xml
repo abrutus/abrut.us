@@ -4,7 +4,7 @@
   <title><![CDATA[Andre Brutus]]></title>
   <link href="http://abrut.us/feed" rel="self"/>
   <link href="http://abrut.us/"/>
-  <updated>2012-06-23T02:18:47-04:00</updated>
+  <updated>2012-08-22T21:58:49-07:00</updated>
   <id>http://abrut.us/</id>
   <author>
     <name><![CDATA[Andre Brutus]]></name>
@@ -14,9 +14,24 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Coding every day]]></title>
+    <link href="http://abrut.us/blog/2012/08/22/coding-every-day/"/>
+    <updated>2012-08-22T10:02:00-07:00</updated>
+    <id>http://abrut.us/blog/2012/08/22/coding-every-day</id>
+    <content type="html"><![CDATA[<p>Today. I begin my challenge to write code daily(outside of the code I write for work). The main problem with this decision is that I often do not believe the code that I write just-for fun to be &#8220;publish worthy&#8221;.</p>
+
+<p>However, this way, the big brother effect will kick in and allow me improve my daily coding while (hopefully) helping out someone out there. As a result, you will see my newly renamed github (from anebg to abrutus) grow on a daily basis, and this blog will contaih short snippets and explanations. Because this is such a big commitment, I command you as a reader and programmer to do the same, and I will link to your blog(yes, you are my new accountability partner).</p>
+
+<p>So my plan is to pick up a book on a langugage I know next to nothing about (scala/clojure) and mark-down notes here for everyone&#8217;s reference.</p>
+
+<p>Wish me luck!</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[The broken windows theory and Software Engineering]]></title>
     <link href="http://abrut.us/blog/2012/06/22/broken-windows-theory-and-software-engineering/"/>
-    <updated>2012-06-22T01:56:00-04:00</updated>
+    <updated>2012-06-22T01:56:00-07:00</updated>
     <id>http://abrut.us/blog/2012/06/22/broken-windows-theory-and-software-engineering</id>
     <content type="html"><![CDATA[<p>Recently, I stumbled upon an interesting email. It was in Spanish(<a href="http://www.anundis.com/profiles/blogs/un-mundo-sin-las-ventanas-rotas">found it</a>) so be merciful with me as I attempt to translate and paraphrase:</p>
 
@@ -60,7 +75,7 @@
   <entry>
     <title type="html"><![CDATA[On blogging engineering]]></title>
     <link href="http://abrut.us/blog/2012/06/19/ninjas-cutting-onions/"/>
-    <updated>2012-06-19T08:26:00-04:00</updated>
+    <updated>2012-06-19T08:26:00-07:00</updated>
     <id>http://abrut.us/blog/2012/06/19/ninjas-cutting-onions</id>
     <content type="html"><![CDATA[<p>You&#8217;ve landed. Here I blog mostly about issues that arise out of the technology I employ(Django, CodeIgniter, jQuery, Bootstrap) and the ones I&#8217;m learning (Scala and Ruby). Ocassionally, you&#8217;ll hear me describe architectures.
 Drop me a line in the comments, twitter or github. I&#8217;ll be around <strong>(I promise)</strong></p>
