@@ -4,7 +4,7 @@
   <title><![CDATA[Andre Brutus]]></title>
   <link href="http://abrut.us/atom.xml" rel="self"/>
   <link href="http://abrut.us/"/>
-  <updated>2012-08-22T22:13:59-07:00</updated>
+  <updated>2012-10-25T00:42:08-07:00</updated>
   <id>http://abrut.us/</id>
   <author>
     <name><![CDATA[Andre Brutus]]></name>
@@ -14,11 +14,58 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Quote from Job 2]]></title>
+    <link href="http://abrut.us/blog/2012/10/24/quote-from-job-2/"/>
+    <updated>2012-10-24T23:21:00-07:00</updated>
+    <id>http://abrut.us/blog/2012/10/24/quote-from-job-2</id>
+    <content type="html"><![CDATA[<blockquote><p>20“Why is light given to him who is in misery,
+And life to the bitter of soul,
+21 Who long for death, but it does not come,
+And search for it more than hidden treasures;
+22 Who rejoice exceedingly,
+And are glad when they can find the grave?
+23 Why is light given to a man whose way is hidden,
+And whom God has hedged in?</p></blockquote>
+
+<p>In the context of this verse, Job has now learnt about the death of his 10 sons and daughters, loss of his fortune (7k sheep,
+3k camels, 500 oxen and donkeys), and is now experiencing disease(painful sores from the soles of his feet to the top of
+his body). His wife told him to &#8220;Curse God and die!&#8221;, and he answered by saying:</p>
+
+<blockquote><p>Shall we indeed accept good from God, and shall we not accept adversity?</p></blockquote>
+
+<p>Then Job speaks(Job 2), and this part intrigued me. He asks, why do people that live in absolute misery are given the gift of life
+to begin with? People who live in such agony, that to die would be peace?</p>
+
+<p>Coming from someone who just lost all that he loved and owned, and is now filled with painful sores, I understand why he would ask
+such a question. However, this question (for me at least) raises more questions.</p>
+
+<ul>
+<li>What does it mean to be &#8220;hedged in by God&#8221;?</li>
+</ul>
+
+
+<p>This part perplexes me. Coming from the New Testament, were we see God(Jesus) as being the icon of love and care for others, I feel a little blindsided to the
+fact that God &#8216;hedges in people&#8217;. Truth of the matter is, He knows the beginning and the future, and to simplify &#8216;Him&#8217; to my logical means of reasoning is none other than diminishing.
+Job was human after all, and he himself believed he was &#8216;hedged&#8217;. At this point, it just sounds like God places people at certain &#8216;disadvantages&#8217;.</p>
+
+<ul>
+<li>What is the role as a Christian when encountering such agony and pain?</li>
+</ul>
+
+
+<p>It&#8217;s a fact that there are people in this planet that are living in situations where they seek to end their misery. While Job was laying in ashes, his friends came by and did nothing for a week,
+as he was deep in sorrow. They literally laid near him just to give him company.</p>
+
+<p>Well. It&#8217;s late. TBC</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Coding every day]]></title>
     <link href="http://abrut.us/blog/2012/08/22/coding-every-day/"/>
     <updated>2012-08-22T10:02:00-07:00</updated>
     <id>http://abrut.us/blog/2012/08/22/coding-every-day</id>
-    <content type="html"><![CDATA[<p>Today. I begin my challenge to write code daily(outside of the code I write for work). The main problem with this decision is that I often don&#8217;t believe the code that I write just-for-fun to be &#8220;publish worthy&#8221;.</p>
+    <content type="html"><![CDATA[<p>Today I begin my challenge to write code daily(outside of the code I write for work). The main problem with this decision is that I often don&#8217;t believe the code that I write just-for-fun to be &#8220;publish worthy&#8221;.</p>
 
 <p>However, this way, the big brother effect will kick in and allow me improve my daily coding while (hopefully) helping out someone out there. As a result, you will see my newly renamed github (from anebg to abrutus) grow on a daily basis, and this blog will contain short snippets and explanations. Because this is such a big commitment, I command you as a reader and programmer to do the same, and I will link to your blog(yes, you are my new accountability partner).</p>
 
