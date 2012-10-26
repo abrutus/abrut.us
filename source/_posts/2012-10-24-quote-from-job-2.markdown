@@ -3,7 +3,7 @@ layout: post
 title: "Quote from Job 2"
 date: 2012-10-24 23:21
 comments: true
-categories: [Spiritual] 
+categories: [Spiritual]
 ---
 >20“Why is light given to him who is in misery,
 And life to the bitter of soul,
@@ -28,14 +28,13 @@ such a question. However, this question (for me at least) raises more questions.
 
 - What does it mean to be "hedged in by God"?
 
-This part perplexes me. Coming from the New Testament, were we see God(Jesus) as being the icon of love and care for others, I feel a little blindsided to the 
+This part perplexes me. Coming from the New Testament, were we see God(Jesus) as being the icon of love and care for others, I feel a little blindsided to the
 fact that God 'hedges in people'. Truth of the matter is, He knows the beginning and the future, and to simplify 'Him' to my logical means of reasoning is none other than diminishing.
-Job was human after all, and he himself believed he was 'hedged'. At this point, it just sounds like God places people at certain 'disadvantages'. 
+Job was human after all, and he himself believed he was 'hedged'. At this point, it just sounds like God places people at certain 'disadvantages'.
 
 - What is the role as a Christian when encountering such agony and pain?
 
-It's a fact that there are people in this planet that are living in situations where they seek to end their misery. While Job was laying in ashes, his friends came by and did nothing for a week, 
-as he was deep in sorrow. They literally laid near him just to give him company.
+It's a fact that there are people in this planet that are living in situations where they seek to end their misery. While Job was laying in ashes, his friends came by and did nothing for a week,
+as he was deep in sorrow. They literally laid near him just to give him company for a whole week. Was it helpful?
 
-Well. It's late. TBC
 
