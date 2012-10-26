@@ -3,7 +3,7 @@ layout: post
 title: "Quote from Job 2"
 date: 2012-10-24 23:21
 comments: true
-categories: [Religion] 
+categories: [Spiritual] 
 ---
 >20“Why is light given to him who is in misery,
 And life to the bitter of soul,
