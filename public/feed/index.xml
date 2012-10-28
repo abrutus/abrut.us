@@ -4,7 +4,7 @@
   <title><![CDATA[Andre Brutus]]></title>
   <link href="http://abrut.us/feed" rel="self"/>
   <link href="http://abrut.us/"/>
-  <updated>2012-10-25T21:50:55-07:00</updated>
+  <updated>2012-10-28T05:53:16-07:00</updated>
   <id>http://abrut.us/</id>
   <author>
     <name><![CDATA[Andre Brutus]]></name>
@@ -12,6 +12,86 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Creating a virtualenv for use with Django 1.4 and (possibly) Heroku]]></title>
+    <link href="http://abrut.us/blog/2012/10/28/creating-a-virtualenv-for-use-with-django-1-dot-4-and-possibly-heroku/"/>
+    <updated>2012-10-28T05:25:00-07:00</updated>
+    <id>http://abrut.us/blog/2012/10/28/creating-a-virtualenv-for-use-with-django-1-dot-4-and-possibly-heroku</id>
+    <content type="html"><![CDATA[<p>Say you want to start a project and you want to use Heroku for your quick &#8216;proof of concept&#8217;.
+You will need virtual environment.</p>
+
+<p>On my Mac 10.8.2, I did:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo easy_install virtualenv
+</span><span class='line'>sudo easy_install pip</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then to create the virtual environment called venv (while on my project folder):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>virtualenv --distribute venv</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then to activate the virutal environment:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>source venv/bin/activate</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+By now, my propmt&#8217;s prefix would be appended with (venv) and I am inside my virtual environment. I can now proceed to install Django, by executing</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>pip install Django</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After installing Django, I can freeze the requirements so Heroku would know which packages to install whenever I do a push by executing</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>pip freeze &gt; requirements.txt</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+and adding the output file(requirements.txt) to the repository.</p>
+
+<p>By using a virtualenv, you can have different projects use different python installations(2.x and 3.x) in a single development machine, and also replicate your exact production environment. Heroku uses the requirements file to install the specific versions of the modules which in turn makes everything a replica of your development environment.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Job: sins from the youth]]></title>
+    <link href="http://abrut.us/blog/2012/10/28/job-sins-from-the-youth/"/>
+    <updated>2012-10-28T04:58:00-07:00</updated>
+    <id>http://abrut.us/blog/2012/10/28/job-sins-from-the-youth</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Context: Job 13</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When Job pleas to God, he calls to God and asks God to charge him with sinfulness if he finds any, knowing that he will be vindicated by his lack of sin:</p>
+
+<blockquote><p>18Now that I have prepared my case, I know I will be vindicated.</p>
+
+<p>19Can anyone bring charges against me? If so, I will be silent and die.</p></blockquote>
+
+<p>But then, an interesting verse happens:</p>
+
+<blockquote><p>26For you write down bitter things against me
+and make me reap the sins of my youth.</p></blockquote>
+
+<p>And this verse makes think of a question: Does God treat &#8216;sins of the youth&#8217; any differently?
+But hold on, this whole time, I believed Job to be a perfect man, God himself said in Job 1:8</p>
+
+<blockquote><p>“Have you considered my servant Job? There is no one on earth like him; he is <strong>blameless and upright</strong>, a man who fears God and shuns evil.”</p></blockquote>
+
+<p>And now(13 chapters later), I hear that Job had &#8216;sins of his youth&#8217;.</p>
+
+<p>At first, I was disappointed. But then, being like Job suddenly became more human.
+If anything, this makes me believe in the power of God to forgive(and forget): Job sinned while in his youth, came to God and became <strong>blameless and upright</strong>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Bliss that is out of reach]]></title>

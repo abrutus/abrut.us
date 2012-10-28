@@ -3,15 +3,15 @@
 <html lang="zh-cn">
 <head>
   <meta charset="UTF-8">
-  <title>Andre Brutus - Coding Every Day</title>
+  <title>Andre Brutus - Creating a Virtualenv for Use With Django 1.4 and (Possibly) Heroku</title>
 
   <meta name="author" content="Andre Brutus">
   
-  <meta name="description" content="Coding Every Day Aug 22nd, 2012 Today I begin my challenge to write code daily(outside of the code I write for work). The main problem with this &hellip;">
+  <meta name="description" content="Creating a Virtualenv for Use With Django 1.4 and (Possibly) Heroku Oct 28th, 2012 Say you want to start a project and you want to use Heroku for &hellip;">
   
   
 
-  <link rel="canonical" href="http://abrut.us/blog/2012/08/22/coding-every-day">
+  <link rel="canonical" href="http://abrut.us/blog/2012/10/28/creating-a-virtualenv-for-use-with-django-1-dot-4-and-possibly-heroku">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Andre Brutus" type="application/atom+xml">
@@ -52,7 +52,7 @@
 
     <div id="main"> <div class="post-header">
   
-    <h1 class="post-title">Coding Every Day</h1>
+    <h1 class="post-title">Creating a Virtualenv for Use With Django 1.4 and (Possibly) Heroku</h1>
   
   
 
@@ -66,16 +66,49 @@
   
 
 
-<time datetime="2012-08-22T10:02:00-07:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2012</time>
+<time datetime="2012-10-28T05:25:00-07:00" pubdate data-updated="true">Oct 28<span>th</span>, 2012</time>
 </div>
 
-<div class="post-content"><p>Today I begin my challenge to write code daily(outside of the code I write for work). The main problem with this decision is that I often don&#8217;t believe the code that I write just-for-fun to be &#8220;publish worthy&#8221;.</p>
+<div class="post-content"><p>Say you want to start a project and you want to use Heroku for your quick &#8216;proof of concept&#8217;.
+You will need virtual environment.</p>
 
-<p>However, this way, the big brother effect will kick in and allow me improve my daily coding while (hopefully) helping out someone out there. As a result, you will see my newly renamed github (from anebg to abrutus) grow on a daily basis, and this blog will contain short snippets and explanations. Because this is such a big commitment, I command you as a reader and programmer to do the same, and I will link to your blog(yes, you are my new accountability partner).</p>
+<p>On my Mac 10.8.2, I did:</p>
 
-<p>So my plan is to pick up a book on a langugage I know next to nothing about (scala/clojure) and mark-down notes here for everyone&#8217;s reference.</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo easy_install virtualenv
+</span><span class='line'>sudo easy_install pip</span></code></pre></td></tr></table></div></figure>
 
-<p>Wish me luck!</p>
+
+<p>Then to create the virtual environment called venv (while on my project folder):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>virtualenv --distribute venv</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then to activate the virutal environment:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>source venv/bin/activate</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+By now, my propmt&#8217;s prefix would be appended with (venv) and I am inside my virtual environment. I can now proceed to install Django, by executing</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>pip install Django</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After installing Django, I can freeze the requirements so Heroku would know which packages to install whenever I do a push by executing</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>pip freeze &gt; requirements.txt</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+and adding the output file(requirements.txt) to the repository.</p>
+
+<p>By using a virtualenv, you can have different projects use different python installations(2.x and 3.x) in a single development machine, and also replicate your exact production environment. Heroku uses the requirements file to install the specific versions of the modules which in turn makes everything a replica of your development environment.</p>
 </div>
 
 
@@ -86,7 +119,7 @@
 <span class="categories">
   Categories:
   
-    <a class='category' href='/blog/categories/coding-every-day/'>Coding Every Day</a>
+    <a class='category' href='/blog/categories/coding/'>Coding</a>, <a class='category' href='/blog/categories/coding-every-day/'>Coding Every Day</a>
   
 </span>
 
@@ -180,8 +213,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://abrut.us/blog/2012/08/22/coding-every-day/';
-        var disqus_url = 'http://abrut.us/blog/2012/08/22/coding-every-day/';
+        var disqus_identifier = 'http://abrut.us/blog/2012/10/28/creating-a-virtualenv-for-use-with-django-1-dot-4-and-possibly-heroku/';
+        var disqus_url = 'http://abrut.us/blog/2012/10/28/creating-a-virtualenv-for-use-with-django-1-dot-4-and-possibly-heroku/';
         var disqus_script = 'embed.js';
       
     (function () {

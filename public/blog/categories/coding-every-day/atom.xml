@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Coding Every Day | Andre Brutus]]></title>
   <link href="http://abrut.us/blog/categories/coding-every-day/atom.xml" rel="self"/>
   <link href="http://abrut.us/"/>
-  <updated>2012-10-25T21:50:55-07:00</updated>
+  <updated>2012-10-28T05:53:16-07:00</updated>
   <id>http://abrut.us/</id>
   <author>
     <name><![CDATA[Andre Brutus]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Creating a virtualenv for use with Django 1.4 and (possibly) Heroku]]></title>
+    <link href="http://abrut.us/blog/2012/10/28/creating-a-virtualenv-for-use-with-django-1-dot-4-and-possibly-heroku/"/>
+    <updated>2012-10-28T05:25:00-07:00</updated>
+    <id>http://abrut.us/blog/2012/10/28/creating-a-virtualenv-for-use-with-django-1-dot-4-and-possibly-heroku</id>
+    <content type="html"><![CDATA[<p>Say you want to start a project and you want to use Heroku for your quick 'proof of concept'.
+You will need virtual environment.</p>
+
+<p>On my Mac 10.8.2, I did:</p>
+
+<p><code>
+sudo easy_install virtualenv
+sudo easy_install pip
+</code>
+Then to create the virtual environment called venv (while on my project folder):
+<code>
+virtualenv --distribute venv
+</code>
+Then to activate the virutal environment:
+<code>
+source venv/bin/activate
+</code>
+By now, my propmt's prefix would be appended with (venv) and I am inside my virtual environment. I can now proceed to install Django, by executing
+<code>
+pip install Django
+</code>
+After installing Django, I can freeze the requirements so Heroku would know which packages to install whenever I do a push by executing</p>
+
+<p><code>
+pip freeze &gt; requirements.txt
+</code>
+and adding the output file(requirements.txt) to the repository.</p>
+
+<p>By using a virtualenv, you can have different projects use different python installations(2.x and 3.x) in a single development machine, and also replicate your exact production environment. Heroku uses the requirements file to install the specific versions of the modules which in turn makes everything a replica of your development environment.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Coding every day]]></title>

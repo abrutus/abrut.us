@@ -3,7 +3,7 @@ layout: post
 title: "On blogging engineering"
 date: 2012-06-19 08:26
 comments: true
-categories: 
+categories: [Coding] 
 ---
 
 You've landed. Here I blog mostly about issues that arise out of the technology I employ(Django, CodeIgniter, jQuery, Bootstrap) and the ones I'm learning (Scala and Ruby). Ocassionally, you'll hear me describe architectures.
