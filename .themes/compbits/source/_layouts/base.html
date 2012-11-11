@@ -1,11 +1,11 @@
 {% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
 <!DOCTYPE HTML>
-<html lang="zh-cn">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <title>{{ site.title }} - {{ page.title | titlecase }}</title>
-
   <meta name="author" content="{{ site.author }}">
+  <meta name="google-site-verification" content="mRTgsVG1EorsoR2e5W1z4JNzankQ9HVxtN6b0Xgtkgs" />
   {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
   <meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
   {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
