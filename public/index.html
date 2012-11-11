@@ -7,7 +7,8 @@
 
   <meta name="author" content="Andre Brutus">
   
-  <meta name="description" content="Chronicles of a Bittersweet Travel Experience Nov 3rd, 2012 Having but the best packing procrastination habits can be useful sometimes. When I&#8217 &hellip;">
+  <meta name="description" content="Spell Check Using VIM Nov 11th, 2012 It should be no secret to anyone that my main editor for programming (and
+writing blog posts) is VIM. Given &hellip;">
   
   
 
@@ -51,6 +52,79 @@
 </ul>
 
     <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2012/11/11/spell-check-vim/">Spell Check Using VIM</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-11T00:02:00-08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2012</time>
+</div>
+
+<div class="post-content"><p>It should be no secret to anyone that my main editor for programming (and
+writing blog posts) is VIM. Given that I have allowed personal posts to
+occasionally feature on my blog, I have written some lengthy blog posts. Long posts usually
+mean lots of spelling mistakes, and there are some commands that have helped me on the way.</p>
+
+<p>To enable spell check (will highlight misspelled words)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:set spell</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here&#8217;s a sample output:</p>
+
+<p><img src="http://cl.ly/image/3q1u1F0B0Y3T/Screen%20Shot%202012-11-11%20at%2012.19.11%20AM.png" alt="Sample of VIM's spellcheck'" /></p>
+
+<p>To advance to the next misspelled word</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>]s</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or to go to the previous word</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[s</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To show spelling suggestions for currently selected misspelled word:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>z=</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="http://cl.ly/image/2o1Z2G3O0138/Screen%20Shot%202012-11-11%20at%2012.21.05%20AM.png" alt="Spelling Suggestions in VIM" width="50%" /></p>
+
+<p>And to add a word to VIM&#8217;s dictionary:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>zg</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And of course, to turn off spellcheck:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:set nospell</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Also, if you don&#8217;t know it by now, this Blog runs on Octopress and is published via git. If you find a post that needs &#8216;refactoring&#8217;, feel free to <a href="https://github.com/abrutus/abrut.us/tree/master/source/_posts">fork</a> the repository and do a pull request. Gotta love open source!</p>
+</div>
+ </div>
 
   
   <div class="post"> <div class="post-header">
@@ -477,6 +551,10 @@ Drop me a line in the comments, twitter or github. I&#8217;ll be around <strong>
       <ul>
         
           <li>
+            <a href="/blog/2012/11/11/spell-check-vim/">Spell Check using VIM</a>
+          </li>
+        
+          <li>
             <a href="/blog/2012/11/03/chronicles-of-a-bittersweet-travel-experience/">Chronicles of a bittersweet travel experience</a>
           </li>
         
@@ -490,10 +568,6 @@ Drop me a line in the comments, twitter or github. I&#8217;ll be around <strong>
         
           <li>
             <a href="/blog/2012/10/25/bliss-that-is-out-of-reach/">Bliss that is out of reach</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2012/10/24/quote-from-job-2/">Quote from Job 2</a>
           </li>
         
       </ul>

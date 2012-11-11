@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Coding | Andre Brutus]]></title>
   <link href="http://abrut.us/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://abrut.us/"/>
-  <updated>2012-11-11T00:00:55-08:00</updated>
+  <updated>2012-11-11T00:45:24-08:00</updated>
   <id>http://abrut.us/</id>
   <author>
     <name><![CDATA[Andre Brutus]]></name>
@@ -12,6 +12,53 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Spell Check using VIM]]></title>
+    <link href="http://abrut.us/blog/2012/11/11/spell-check-vim/"/>
+    <updated>2012-11-11T00:02:00-08:00</updated>
+    <id>http://abrut.us/blog/2012/11/11/spell-check-vim</id>
+    <content type="html"><![CDATA[<p>It should be no secret to anyone that my main editor for programming (and
+writing blog posts) is VIM. Given that I have allowed personal posts to
+occasionally feature on my blog, I have written some lengthy blog posts. Long posts usually
+mean lots of spelling mistakes, and there are some commands that have helped me on the way.</p>
+
+<p>To enable spell check (will highlight misspelled words)
+<code>
+:set spell
+</code>
+Here's a sample output:</p>
+
+<p><img src="http://cl.ly/image/3q1u1F0B0Y3T/Screen%20Shot%202012-11-11%20at%2012.19.11%20AM.png" alt="Sample of VIM's spellcheck'" /></p>
+
+<p>To advance to the next misspelled word
+<code>
+]s
+</code>
+or to go to the previous word
+<code>
+[s
+</code></p>
+
+<p>To show spelling suggestions for currently selected misspelled word:
+<code>
+z=
+</code>
+<img src="http://cl.ly/image/2o1Z2G3O0138/Screen%20Shot%202012-11-11%20at%2012.21.05%20AM.png" alt="Spelling Suggestions in VIM" width="50%" /></p>
+
+<p>And to add a word to VIM's dictionary:
+<code>
+zg
+</code></p>
+
+<p>And of course, to turn off spellcheck:
+<code>
+:set nospell
+</code></p>
+
+<p>Also, if you don't know it by now, this Blog runs on Octopress and is published via git. If you find a post that needs 'refactoring', feel free to <a href="https://github.com/abrutus/abrut.us/tree/master/source/_posts">fork</a> the repository and do a pull request. Gotta love open source!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Creating a virtualenv for use with Django 1.4 and (possibly) Heroku]]></title>
