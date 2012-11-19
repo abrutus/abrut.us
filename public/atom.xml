@@ -4,7 +4,7 @@
   <title><![CDATA[Andre Brutus]]></title>
   <link href="http://abrut.us/atom.xml" rel="self"/>
   <link href="http://abrut.us/"/>
-  <updated>2012-11-11T01:41:41-08:00</updated>
+  <updated>2012-11-19T12:54:29-08:00</updated>
   <id>http://abrut.us/</id>
   <author>
     <name><![CDATA[Andre Brutus]]></name>
@@ -12,6 +12,71 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[cURL PUT request with P12 (PKCS #12) certificate using PHP]]></title>
+    <link href="http://abrut.us/blog/2012/11/19/curl-put-request-with-p12-pkcs-number-12-certificate-using-php/"/>
+    <updated>2012-11-19T11:07:00-08:00</updated>
+    <id>http://abrut.us/blog/2012/11/19/curl-put-request-with-p12-pkcs-number-12-certificate-using-php</id>
+    <content type="html"><![CDATA[<p>While working with some archaic API I was asked to upload files via HTTP using a P12 certificate. At first, phased and confused, I thought to myself: file uploads usually happen through a POST request using a form
+that has an enctype of multipart/form-data, or different protocols like (S)FTP, WebDav, etc. Remembering some academia on the HTTP protocol, I resorted to the PUT request, and it actually worked. So to save someone
+some time:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="cp">&lt;?php</span>
+</span><span class='line'><span class="nv">$content</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s2">&quot;/path/to/file_you_want_to_upload.pdf&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="nv">$stream_length</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$content</span><span class="p">);</span>
+</span><span class='line'><span class="nv">$fp</span> <span class="o">=</span> <span class="nb">fopen</span><span class="p">(</span><span class="s2">&quot;php://memory&quot;</span><span class="p">,</span> <span class="s2">&quot;rw&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="nb">fputs</span><span class="p">(</span><span class="nv">$fp</span><span class="p">,</span> <span class="nv">$content</span><span class="p">);</span>
+</span><span class='line'><span class="nb">rewind</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span>
+</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$url</span><span class="o">=</span><span class="s2">&quot;http://some.url/file_you_want_to_upload.pdf&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_SSLCERT</span><span class="p">,</span> <span class="s2">&quot;/path/to/certfile.p12&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_SSLCERTTYPE</span><span class="p">,</span> <span class="s2">&quot;P12&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_SSLKEYPASSWD</span><span class="p">,</span> <span class="s2">&quot;CertFilePassword&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="c1">// And if the HTTP endpoint requries HTTP Auth</span>
+</span><span class='line'><span class="c1">//curl_setopt($ch, CURLOPT_USERPWD, $cfg[&#39;HTTP_AUTH_USER&#39;]. &quot;:&quot; . $cfg[&#39;HTTP_AUTH_PASS&#39;]);</span>
+</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_PUT</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_INFILE</span><span class="p">,</span> <span class="nv">$put_file_handle</span><span class="p">);</span>
+</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_INFILESIZE</span><span class="p">,</span> <span class="nv">$stream_length</span><span class="p">);</span>
+</span><span class='line'><span class="nv">$result</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="nv">$result</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">throw</span> <span class="k">new</span> <span class="nx">Exception</span><span class="p">(</span><span class="s2">&quot;Curl Error on PUT file: &quot;</span><span class="o">.</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">));</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+</span><span class='line'><span class="nb">fclose</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+</span><span class='line'><span class="cp">?&gt;</span><span class="x"></span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This snippet opens a file, counts the bytes, opens a file stream (in memory) and passes that information into the CURLOPT_INFILE and CURLOPT_INFILESIZE parameters of the cURL API. This snippet throws, so you should use a try-catch.</p>
+
+<p>An obvious improvement would be to use <code>filesize()</code> instead ouf <code>count()</code>,
+ but my script generates files on the fly, so instead of resorting to slow I/O, I do things in memory. You could change <code>$content = "my file contents";</code> and see its dynamic nature. If you will use it only for file system files, I do recommend using filesize().</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Spell Check using VIM]]></title>
