@@ -27,7 +27,7 @@ end
 
 Then download the rake-rewrite gem by executing ```bundle```. 
 
-Finally, update your blog by ```rake generate``` and publish away!
+Finally, update your blog by ```rake generate``` and publish away! You can see the changes to both the Gemfile and confi.ru on my <a href="https://github.com/abrutus/abrut.us/commit/570fbe904a673d5fee0e5ab41ec3208f1c7a46f7#diff-0" target="_blank">github commit</a>
 
 Footnotes:
 
