@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Coding | Andre Brutus]]></title>
   <link href="http://abrut.us/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://abrut.us/"/>
-  <updated>2012-11-20T00:33:02-08:00</updated>
+  <updated>2012-11-20T01:09:51-08:00</updated>
   <id>http://abrut.us/</id>
   <author>
     <name><![CDATA[Andre Brutus]]></name>
@@ -12,6 +12,50 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[301 Redirects with Octopress on Heroku]]></title>
+    <link href="http://abrut.us/blog/2012/11/20/301-redirects-with-octopress-on-heroku/"/>
+    <updated>2012-11-20T00:40:00-08:00</updated>
+    <id>http://abrut.us/blog/2012/11/20/301-redirects-with-octopress-on-heroku</id>
+    <content type="html"><![CDATA[<p>I decided to move over my personal blog entries outside this blog. Following good migration procedure, I set up <a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=93633">301 Redirects</a>. At first, my dumb self cranked up vim and created a .htaccess, then I remembered that this blog runs on Heroku, which is probably not using Apache (for obvious scalability reasons). After a quick <code>heroku ps</code>, I can see that the 'thin' application is serving my blog. <code>thin --version</code> reveals that I am running <a href="http://code.macournoyer.com/thin/">thin 1.2.6 codename Crazy Delicious</a>.</p>
+
+<p>Needless to say, htaccess wont work, so I must resort to using <a href="https://github.com/jtrupiano/rack-rewrite">rack-rewrite</a>[<sup>1].</sup>
+I add the gem at the end of my Gemfile:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;rack-rewrite&#39;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Then I add my rewrite rules to config.ru (after the $root line)
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">use</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Rewrite</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;r301 %r{^/</span><span class="n">blog</span><span class="o">/</span><span class="mi">2012</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">25</span><span class="o">/</span><span class="n">bliss</span><span class="o">-</span><span class="n">that</span><span class="o">-</span><span class="n">is</span><span class="o">-</span><span class="n">out</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">reach</span><span class="o">/</span><span class="sc">?$</span><span class="p">},</span> <span class="s1">&#39;http://blog.andrebrutus.com/2012/10/25/bliss-that-is-out-of-reach/&#39;</span>
+</span><span class='line'><span class="n">r301</span> <span class="sr">%r{^/blog/2012/10/28/job-sins-from-the-youth/?$}</span><span class="p">,</span> <span class="s1">&#39;http://blog.andrebrutus.com/2012/10/28/job-sins-from-the-youth/&#39;</span>
+</span><span class='line'><span class="n">r301</span> <span class="sr">%r{^/blog/2012/11/03/chronicles-of-a-bittersweet-travel-experience/?$}</span><span class="p">,</span> <span class="s1">&#39;http://blog.andrebrutus.com/2012/11/03/chronicles-of-a-bittersweet-travel-experience/&#39;</span>
+</span><span class='line'><span class="n">r301</span> <span class="sr">%r{^/blog/2012/10/24/quote-from-job-2/?$}</span><span class="p">,</span> <span class="s1">&#39;http://blog.andrebrutus.com/2012/10/04/quote-from-job-2/&#39;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Then download the rake-rewrite gem by executing <code>bundle</code>.</p>
+
+<p>Finally, update your blog by <code>rake generate</code> and publish away!</p>
+
+<p>Footnotes:</p>
+
+<p>[<sup>1]</sup> While definitely more verbose, <a href="http://adamwiggall.com/blog/2012/01/05/redirects-octopress-and-heroku" target="_blank">this article</a> helped me find the solution.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[cURL PUT request with P12 (PKCS #12) certificate using PHP]]></title>

@@ -3,15 +3,15 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
-  <title>Andre Brutus - The Broken Windows Theory and Software Engineering</title>
+  <title>Andre Brutus - 301 Redirects With Octopress on Heroku</title>
   <meta name="author" content="Andre Brutus">
   <meta name="google-site-verification" content="mRTgsVG1EorsoR2e5W1z4JNzankQ9HVxtN6b0Xgtkgs" />
   
-  <meta name="description" content="The Broken Windows Theory and Software Engineering Jun 22nd, 2012 Recently, I stumbled upon an interesting email. It was in Spanish(found it) so be &hellip;">
+  <meta name="description" content="301 Redirects With Octopress on Heroku Nov 20th, 2012 I decided to move over my personal blog entries outside this blog. Following good migration &hellip;">
   
   
 
-  <link rel="canonical" href="http://abrut.us/blog/2012/06/22/broken-windows-theory-and-software-engineering">
+  <link rel="canonical" href="http://abrut.us/blog/2012/11/20/301-redirects-with-octopress-on-heroku">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Andre Brutus" type="application/atom+xml">
@@ -52,7 +52,7 @@
 
     <div id="main"> <div class="post-header">
   
-    <h1 class="post-title">The Broken Windows Theory and Software Engineering</h1>
+    <h1 class="post-title">301 Redirects With Octopress on Heroku</h1>
   
   
 
@@ -66,51 +66,56 @@
   
 
 
-<time datetime="2012-06-22T01:56:00-07:00" pubdate data-updated="true">Jun 22<span>nd</span>, 2012</time>
+<time datetime="2012-11-20T00:40:00-08:00" pubdate data-updated="true">Nov 20<span>th</span>, 2012</time>
 </div>
 
-<div class="post-content"><p>Recently, I stumbled upon an interesting email. It was in Spanish(<a href="http://www.anundis.com/profiles/blogs/un-mundo-sin-las-ventanas-rotas">found it</a>) so be merciful with me as I attempt to translate and paraphrase:</p>
+<div class="post-content"><p>I decided to move over my personal blog entries outside this blog. Following good migration procedure, I set up <a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=93633">301 Redirects</a>. At first, my dumb self cranked up vim and created a .htaccess, then I remembered that this blog runs on Heroku, which is probably not using Apache (for obvious scalability reasons). After a quick <code>heroku ps</code>, I can see that the &#8216;thin&#8217; application is serving my blog. <code>thin --version</code> reveals that I am running <a href="http://code.macournoyer.com/thin/">thin 1.2.6 codename Crazy Delicious</a>.</p>
 
-<blockquote><p>1969, Stanford: Professor Philip Zimbardo conducted an experiment in social psychology. He left two identical cars(same make,model, color) in two different neighborhoods(Bronx-NY, and Palo Alto-CA). Two identical cars in two neighborhoods with very different populations, along with a team of specialists in social psychology to study the behavior of people at each site.</p>
+<p>Needless to say, htaccess wont work, so I must resort to using <a href="https://github.com/jtrupiano/rack-rewrite">rack-rewrite</a>[<sup>1].</sup>
+I add the gem at the end of my Gemfile:</p>
 
-<p>It turned out that the car in the Bronx began to be vandalized within hours: lost the tires, engine, mirrors, radio. All that was usable was taken away, and what wasn&#8217;t usable was destroyed. The car in Palo alto remained intact.</p>
-
-<p>Commonly, people attribute poverty to cause crime, but the experiment wasn&#8217;t over. With the Palo Alto car unscratched and the Bronx car destroyed, the researchers decided to break a window in the Palo Alto Car. The result was that this action unleashed the same process as in the Bronx: theft, violence and vandalism reduced the vehicle to the same state as in the poor neighborhood.</p>
-
-<p>Why was the broken car window in a supposedly safe neighborhood able to unleash such a criminal reaction?</p></blockquote>
-
-<!-- more -->
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;rack-rewrite&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
-<blockquote><p>It isn&#8217;t poverty, it&#8217;s obviously something to do with psychology, human behavior and social relations</p>
+<p>Then I add my rewrite rules to config.ru (after the $root line)</p>
 
-<p>A broken window in an abandoned car conveys an idea of deterioration, lack of interest, carelessness that breaks codes of coexistence, and it resembles the absence of law, norm or rules. Every new attack suffered by the auto reaffirms and multiplies the idea, until the escalation of events, getting worse, becomes uncontrollable, leading to irrational violence.</p>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">use</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Rewrite</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">r301</span> <span class="sr">%r{^/blog/2012/10/25/bliss-that-is-out-of-reach/?$}</span><span class="p">,</span> <span class="s1">&#39;http://blog.andrebrutus.com/2012/10/25/bliss-that-is-out-of-reach/&#39;</span>
+</span><span class='line'>  <span class="n">r301</span> <span class="sr">%r{^/blog/2012/10/28/job-sins-from-the-youth/?$}</span><span class="p">,</span> <span class="s1">&#39;http://blog.andrebrutus.com/2012/10/28/job-sins-from-the-youth/&#39;</span>
+</span><span class='line'>  <span class="n">r301</span> <span class="sr">%r{^/blog/2012/11/03/chronicles-of-a-bittersweet-travel-experience/?$}</span><span class="p">,</span> <span class="s1">&#39;http://blog.andrebrutus.com/2012/11/03/chronicles-of-a-bittersweet-travel-experience/&#39;</span>
+</span><span class='line'>  <span class="n">r301</span> <span class="sr">%r{^/blog/2012/10/24/quote-from-job-2/?$}</span><span class="p">,</span> <span class="s1">&#39;http://blog.andrebrutus.com/2012/10/04/quote-from-job-2/&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>In later experiments (James Q. Wilson and George Kelling) developed the &#8216;broken windows theory&#8217;, from a criminology point of view concluding that crime is higher in areas where neglect, dirt, disorder and abuse are higher.</p></blockquote>
 
-<p>This article got my mind running. What If the same principle is applied to Software Engineering?</p>
+<p>Then download the rake-rewrite gem by executing <code>bundle</code>.</p>
 
-<p>Suddenly my mind wandered off to that function I left undocumented, that class that  needed refactoring. I&#8217;m not a perfect programmer. Will the future programmers(or some newbs) vandalize my code? Will I be ashamed to look at my creation?</p>
+<p>Finally, update your blog by <code>rake generate</code> and publish away!</p>
 
-<p>Probably. Also, you don&#8217;t need a &#8220;society&#8221; of programmers to make this theory a reality. Just you and your future you, looking back at beta version of your own self in code. You will see the broken windows, but will you fix those broken windows? Or, will they influence you to carelessness?</p>
+<p>Footnotes:</p>
 
-<p>Some hope (from the <a href="http://en.wikipedia.org/wiki/Broken_windows_theory">Wiki</a> article):</p>
-
-<blockquote><p>George L. Kelling [the author of the theory], was hired as a consultant to the New York City Transit Authority in 1985, and measures to test the broken windows theory were implemented by David Gunn. The presence of graffiti was intensively targeted, and the subway system was cleaned from 1984 until 1990.</p>
-
-<p>According to the 2001 study of crime trends in New York by George Kelling and William Sousa,[3] rates of both petty and serious crime fell suddenly and significantly, and continued to drop for the following ten years.</p></blockquote>
-
-<p>And apparently similar success occurred in Albuquerque, Massachusetts(20% drop in calls to the police) and even the Netherlands.</p>
-
-<p>Feel free to drop me a line in the comment section below.</p>
-
-<p>UPDATE: From the comments (below and reddit), it seems that this topic was covered previously by the Pragmatic Programmer and I recommend you <a href="http://pragprog.com/the-pragmatic-programmer/extracts/software-entropy">read it here</a>.</p>
+<p>[<sup>1]</sup> While definitely more verbose, <a href="http://adamwiggall.com/blog/2012/01/05/redirects-octopress-and-heroku" target="_blank">this article</a> helped me find the solution.</p>
 </div>
 
 
 <div class="post-single">
   <div class="post-meta">
     
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/coding/'>Coding</a>
+  
+</span>
 
 
     
@@ -202,8 +207,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://abrut.us/blog/2012/06/22/broken-windows-theory-and-software-engineering/';
-        var disqus_url = 'http://abrut.us/blog/2012/06/22/broken-windows-theory-and-software-engineering/';
+        var disqus_identifier = 'http://abrut.us/blog/2012/11/20/301-redirects-with-octopress-on-heroku/';
+        var disqus_url = 'http://abrut.us/blog/2012/11/20/301-redirects-with-octopress-on-heroku/';
         var disqus_script = 'embed.js';
       
     (function () {
