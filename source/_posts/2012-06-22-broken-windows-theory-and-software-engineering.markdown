@@ -3,7 +3,7 @@ layout: post
 title: "The broken windows theory and Software Engineering"
 date: 2012-06-22 01:56
 comments: true
-categories: 
+categories: ['Programming']
 ---
 Recently, I stumbled upon an interesting email. It was in Spanish([found it](http://www.anundis.com/profiles/blogs/un-mundo-sin-las-ventanas-rotas)) so be merciful with me as I attempt to translate and paraphrase:
 > 1969, Stanford: Professor Philip Zimbardo conducted an experiment in social psychology. He left two identical cars(same make,model, color) in two different neighborhoods(Bronx-NY, and Palo Alto-CA). Two identical cars in two neighborhoods with very different populations, along with a team of specialists in social psychology to study the behavior of people at each site. 

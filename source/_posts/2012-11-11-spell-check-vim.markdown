@@ -3,7 +3,7 @@ layout: post
 title: "Spell Check using VIM"
 date: 2012-11-11 00:02
 comments: true
-categories: ['Coding'] 
+categories: ['Programming'] 
 ---
 
 

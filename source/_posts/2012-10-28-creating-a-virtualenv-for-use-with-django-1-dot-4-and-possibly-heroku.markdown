@@ -3,7 +3,7 @@ layout: post
 title: "Creating a virtualenv for use with Django 1.4 and (possibly) Heroku"
 date: 2012-10-28 05:25
 comments: true
-categories: ["Coding", "Coding Every Day"]
+categories: ["Programming", "Programming Every Day"]
 ---
 Say you want to start a project and you want to use Heroku for your quick 'proof of concept'.
 You will need virtual environment. 

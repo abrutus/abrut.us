@@ -4,7 +4,7 @@
   <title><![CDATA[Andre Brutus]]></title>
   <link href="http://abrut.us/feed" rel="self"/>
   <link href="http://abrut.us/"/>
-  <updated>2012-11-20T11:09:36-08:00</updated>
+  <updated>2013-09-25T10:59:02-07:00</updated>
   <id>http://abrut.us/</id>
   <author>
     <name><![CDATA[Andre Brutus]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to reset stats-rrdb]]></title>
+    <link href="http://abrut.us/blog/2013/09/25/how-to-reset-stats-rrdb/"/>
+    <updated>2013-09-25T10:38:00-07:00</updated>
+    <id>http://abrut.us/blog/2013/09/25/how-to-reset-stats-rrdb</id>
+    <content type="html"><![CDATA[<p>For some odd reason, I was unable to start the stats-rrdb daemon (it said that it started but it would die immediately afterwards).</p>
+
+<p>After tailing the logs, I found this slightly cryptic error message.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Server status update thread exception: Unexpected rrdb metric block pos 648 pos_ts: 1379698992 (expected from tuple: 1379697192)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I attempted changing some configs to no avail, so the last resource was to reset the metrics. Given that this was on my VM and no important metrics were being recorded for me, I resorted to clearing all the data (<strong>don&#8217;t do this in your production environment, unless you don&#8217;t care about losing all your data</strong>).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo rm -rf /var/stats-rrdb/*</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After clearing all the data, I was able to restart the stats-rrdb. Best of luck!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[301 Redirects with Octopress on Heroku]]></title>
@@ -226,7 +249,7 @@ and adding the output file(requirements.txt) to the repository.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Coding every day]]></title>
+    <title type="html"><![CDATA[Programming every day]]></title>
     <link href="http://abrut.us/blog/2012/08/22/coding-every-day/"/>
     <updated>2012-08-22T10:02:00-07:00</updated>
     <id>http://abrut.us/blog/2012/08/22/coding-every-day</id>

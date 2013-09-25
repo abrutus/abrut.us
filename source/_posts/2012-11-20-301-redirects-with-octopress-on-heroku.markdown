@@ -3,7 +3,7 @@ layout: post
 title: "301 Redirects with Octopress on Heroku"
 date: 2012-11-20 00:40
 comments: true
-categories: ['Coding'] 
+categories: ['Programming'] 
 ---
 I decided to move over my personal blog entries outside this blog. Following good migration procedure, I set up [301 Redirects](http://support.google.com/webmasters/bin/answer.py?hl=en&answer=93633). At first, my dumb self cranked up vim and created a .htaccess, then I remembered that this blog runs on Heroku, which is probably not using Apache (for obvious scalability reasons). After a quick ```heroku ps```, I can see that the 'thin' application is serving my blog. ```thin --version``` reveals that I am running [thin 1.2.6 codename Crazy Delicious](http://code.macournoyer.com/thin/). 
 

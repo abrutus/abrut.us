@@ -3,7 +3,7 @@ layout: post
 title: "cURL PUT request with P12 (PKCS #12) certificate using PHP"
 date: 2012-11-19 11:07
 comments: true
-categories: ['Coding'] 
+categories: ['Programming'] 
 ---
 While working with some archaic API I was asked to upload files via HTTP using a P12 certificate. At first, phased and confused, I thought to myself: file uploads usually happen through a POST request using a form
 that has an enctype of multipart/form-data, or different protocols like (S)FTP, WebDav, etc. Remembering some academia on the HTTP protocol, I resorted to the PUT request, and it actually worked. So to save someone

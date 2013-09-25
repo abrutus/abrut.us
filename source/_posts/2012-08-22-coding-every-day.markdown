@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Coding every day"
+title: "Programming every day"
 date: 2012-08-22 10:02
 comments: true
-categories: ["Coding Every Day"]
+categories: ["Programming Every Day"]
 ---
 Today I begin my challenge to write code daily(outside of the code I write for work). The main problem with this decision is that I often don't believe the code that I write just-for-fun to be "publish worthy". 
 

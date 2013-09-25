@@ -7,7 +7,7 @@
   <meta name="author" content="Andre Brutus">
   <meta name="google-site-verification" content="mRTgsVG1EorsoR2e5W1z4JNzankQ9HVxtN6b0Xgtkgs" />
   
-  <meta name="description" content="301 Redirects With Octopress on Heroku Nov 20th, 2012 I decided to move over my personal blog entries outside this blog. Following good migration &hellip;">
+  <meta name="description" content="How to Reset Stats-rrdb Sep 25th, 2013 For some odd reason, I was unable to start the stats-rrdb daemon (it said that it started but it would die &hellip;">
   
   
 
@@ -51,6 +51,46 @@
 </ul>
 
     <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2013/09/25/how-to-reset-stats-rrdb/">How to Reset Stats-rrdb</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-25T10:38:00-07:00" pubdate data-updated="true">Sep 25<span>th</span>, 2013</time>
+</div>
+
+<div class="post-content"><p>For some odd reason, I was unable to start the stats-rrdb daemon (it said that it started but it would die immediately afterwards).</p>
+
+<p>After tailing the logs, I found this slightly cryptic error message.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Server status update thread exception: Unexpected rrdb metric block pos 648 pos_ts: 1379698992 (expected from tuple: 1379697192)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I attempted changing some configs to no avail, so the last resource was to reset the metrics. Given that this was on my VM and no important metrics were being recorded for me, I resorted to clearing all the data (<strong>don&#8217;t do this in your production environment, unless you don&#8217;t care about losing all your data</strong>).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo rm -rf /var/stats-rrdb/*</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After clearing all the data, I was able to restart the stats-rrdb. Best of luck!</p>
+</div>
+ </div>
 
   
   <div class="post"> <div class="post-header">
@@ -336,7 +376,7 @@ and adding the output file(requirements.txt) to the repository.</p>
   <div class="post"> <div class="post-header">
   
     <h1 class="post-title">
-      <a href="/blog/2012/08/22/coding-every-day/">Coding Every Day</a>
+      <a href="/blog/2012/08/22/coding-every-day/">Programming Every Day</a>
     </h1>
   
   
@@ -491,6 +531,10 @@ Drop me a line in the comments, twitter or github. I&#8217;ll be around <strong>
       <ul>
         
           <li>
+            <a href="/blog/2013/09/25/how-to-reset-stats-rrdb/">How to reset stats-rrdb</a>
+          </li>
+        
+          <li>
             <a href="/blog/2012/11/20/301-redirects-with-octopress-on-heroku/">301 Redirects with Octopress on Heroku</a>
           </li>
         
@@ -504,10 +548,6 @@ Drop me a line in the comments, twitter or github. I&#8217;ll be around <strong>
         
           <li>
             <a href="/blog/2012/10/28/creating-a-virtualenv-for-use-with-django-1-dot-4-and-possibly-heroku/">Creating a virtualenv for use with Django 1.4 and (possibly) Heroku</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2012/08/22/coding-every-day/">Coding every day</a>
           </li>
         
       </ul>

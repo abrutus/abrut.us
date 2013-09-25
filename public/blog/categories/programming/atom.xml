@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Coding | Andre Brutus]]></title>
-  <link href="http://abrut.us/blog/categories/coding/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Programming | Andre Brutus]]></title>
+  <link href="http://abrut.us/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://abrut.us/"/>
-  <updated>2012-11-20T11:09:36-08:00</updated>
+  <updated>2013-09-25T10:59:02-07:00</updated>
   <id>http://abrut.us/</id>
   <author>
     <name><![CDATA[Andre Brutus]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to reset stats-rrdb]]></title>
+    <link href="http://abrut.us/blog/2013/09/25/how-to-reset-stats-rrdb/"/>
+    <updated>2013-09-25T10:38:00-07:00</updated>
+    <id>http://abrut.us/blog/2013/09/25/how-to-reset-stats-rrdb</id>
+    <content type="html"><![CDATA[<p>For some odd reason, I was unable to start the stats-rrdb daemon (it said that it started but it would die immediately afterwards).</p>
+
+<p>After tailing the logs, I found this slightly cryptic error message.
+<code>
+Server status update thread exception: Unexpected rrdb metric block pos 648 pos_ts: 1379698992 (expected from tuple: 1379697192)
+</code>
+I attempted changing some configs to no avail, so the last resource was to reset the metrics. Given that this was on my VM and no important metrics were being recorded for me, I resorted to clearing all the data (<strong>don't do this in your production environment, unless you don't care about losing all your data</strong>).
+<code>
+sudo rm -rf /var/stats-rrdb/*
+</code>
+After clearing all the data, I was able to restart the stats-rrdb. Best of luck!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[301 Redirects with Octopress on Heroku]]></title>
@@ -209,39 +228,6 @@ pip freeze &gt; requirements.txt
 and adding the output file(requirements.txt) to the repository.</p>
 
 <p>By using a virtualenv, you can have different projects use different python installations(2.x and 3.x) in a single development machine, and also replicate your exact production environment. Heroku uses the requirements file to install the specific versions of the modules which in turn makes everything a replica of your development environment.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[On blogging engineering]]></title>
-    <link href="http://abrut.us/blog/2012/06/19/ninjas-cutting-onions/"/>
-    <updated>2012-06-19T08:26:00-07:00</updated>
-    <id>http://abrut.us/blog/2012/06/19/ninjas-cutting-onions</id>
-    <content type="html"><![CDATA[<p>You've landed. Here I blog mostly about issues that arise out of the technology I employ(Django, CodeIgniter, jQuery, Bootstrap) and the ones I'm learning (Scala and Ruby). Ocassionally, you'll hear me describe architectures.
-Drop me a line in the comments, twitter or github. I'll be around <strong>(I promise)</strong></p>
-
-<p>And here is a hello world for syntax highlighting:
-<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="c1">// Operator for Overloading</span>
-</span><span class='line'><span class="k">object</span> <span class="nc">operator</span>
-</span><span class='line'><span class="o">{</span>
-</span><span class='line'>  <span class="k">def</span> <span class="n">operation</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">{&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">a</span><span class="o">+</span><span class="n">b</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
