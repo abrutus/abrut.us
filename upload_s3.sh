@@ -1,1 +1,1 @@
-s3cmd sync  --delete-removed  ./ s3://www.abrut.us/
+s3cmd sync  --delete-removed  ./public/ s3://www.abrut.us/

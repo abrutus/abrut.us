@@ -8,7 +8,7 @@ ssh_user       = "user@domain.com"
 ssh_port       = "22"
 document_root  = "~/website.com/"
 rsync_delete   = true
-deploy_default = "rsync"
+deploy_default = "s3"
 
 # This will be configured for you when you run config_deploy
 deploy_branch  = "gh-pages"
@@ -16,6 +16,7 @@ deploy_branch  = "gh-pages"
 ## -- Misc Configs -- ##
 
 public_dir      = "public"    # compiled site directory
+s3_bucket       = "s3://www.abrut.us/"
 source_dir      = "source"    # source file directory
 blog_index_dir  = 'source'    # directory for your blog's index page (if you put your index in source/blog/index.html, set this to 'source/blog')
 deploy_dir      = "_deploy"   # deploy directory (for Github pages deployment)
@@ -238,6 +239,12 @@ task :rsync do
   end
   puts "## Deploying website via Rsync"
   ok_failed system("rsync -avze 'ssh -p #{ssh_port}' #{exclude} #{"--delete" unless rsync_delete == false} #{public_dir}/ #{ssh_user}:#{document_root}")
+end
+
+desc "Deploy website via s3cmd sync"
+task :s3 do
+	puts "## Deploying website via s3cmd"
+	ok_failed system("s3cmd sync  --delete-removed  #{public_dir}/ #{s3_bucket}")
 end
 
 desc "deploy public directory to github pages"
