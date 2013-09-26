@@ -221,6 +221,10 @@ task :deploy do
 end
 
 desc "Generate website and deploy"
+task :gd => [:integrate, :generate, :deploy] do
+end
+
+desc "Generate website and deploy"
 task :gen_deploy => [:integrate, :generate, :deploy] do
 end
 
