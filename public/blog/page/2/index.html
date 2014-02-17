@@ -7,7 +7,7 @@
   <meta name="author" content="Andre Brutus">
   <meta name="google-site-verification" content="mRTgsVG1EorsoR2e5W1z4JNzankQ9HVxtN6b0Xgtkgs" />
   
-  <meta name="description" content="cURL PUT Request With P12 (PKCS #12) Certificate Using PHP Nov 19th, 2012 While working with some archaic API I was asked to upload files via HTTP &hellip;">
+  <meta name="description" content="301 Redirects With Octopress on Heroku Nov 20th, 2012 I decided to move over my personal blog entries outside this blog. Following good migration &hellip;">
   
   
 
@@ -51,6 +51,66 @@
 </ul>
 
     <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2012/11/20/301-redirects-with-octopress-on-heroku/">301 Redirects With Octopress on Heroku</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-20T00:40:00-08:00" pubdate data-updated="true">Nov 20<span>th</span>, 2012</time>
+</div>
+
+<div class="post-content"><p>I decided to move over my personal blog entries outside this blog. Following good migration procedure, I set up <a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=93633">301 Redirects</a>. At first, my dumb self cranked up vim and created a .htaccess, then I remembered that this blog runs on Heroku, which is probably not using Apache (for obvious scalability reasons). After a quick <code>heroku ps</code>, I can see that the &#8216;thin&#8217; application is serving my blog. <code>thin --version</code> reveals that I am running <a href="http://code.macournoyer.com/thin/">thin 1.2.6 codename Crazy Delicious</a>.</p>
+
+<p>Needless to say, htaccess wont work, so I must resort to using <a href="https://github.com/jtrupiano/rack-rewrite">rack-rewrite</a>[<sup>1].</sup></p>
+
+<p>I add the gem at the end of my Gemfile:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gem</span> <span class="s1">&#39;rack-rewrite&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then I add my rewrite rules to config.ru (after the $root line)</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">use</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Rewrite</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">r301</span> <span class="sr">%r{^/blog/2012/10/25/bliss-that-is-out-of-reach/?$}</span><span class="p">,</span> <span class="s1">&#39;http://blog.andrebrutus.com/2012/10/25/bliss-that-is-out-of-reach/&#39;</span>
+</span><span class='line'>  <span class="n">r301</span> <span class="sr">%r{^/blog/2012/10/28/job-sins-from-the-youth/?$}</span><span class="p">,</span> <span class="s1">&#39;http://blog.andrebrutus.com/2012/10/28/job-sins-from-the-youth/&#39;</span>
+</span><span class='line'>  <span class="n">r301</span> <span class="sr">%r{^/blog/2012/11/03/chronicles-of-a-bittersweet-travel-experience/?$}</span><span class="p">,</span> <span class="s1">&#39;http://blog.andrebrutus.com/2012/11/03/chronicles-of-a-bittersweet-travel-experience/&#39;</span>
+</span><span class='line'>  <span class="n">r301</span> <span class="sr">%r{^/blog/2012/10/24/quote-from-job-2/?$}</span><span class="p">,</span> <span class="s1">&#39;http://blog.andrebrutus.com/2012/10/04/quote-from-job-2/&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then download the rake-rewrite gem by executing <code>bundle</code>.</p>
+
+<p>Finally, update your blog by <code>rake generate</code> and publish away! You can see the changes to both the Gemfile and confi.ru on my <a href="https://github.com/abrutus/abrut.us/commit/570fbe904a673d5fee0e5ab41ec3208f1c7a46f7#diff-0" target="_blank">github commit</a></p>
+
+<p>Footnotes:</p>
+
+<p>[<sup>1]</sup> While definitely more verbose, <a href="http://adamwiggall.com/blog/2012/01/05/redirects-octopress-and-heroku" target="_blank">this article</a> helped me find the solution.</p>
+</div>
+ </div>
 
   
   <div class="post"> <div class="post-header">
@@ -207,71 +267,6 @@ mean lots of spelling mistakes, and there are some commands that have helped me 
 </div>
  </div>
 
-  
-  <div class="post"> <div class="post-header">
-  
-    <h1 class="post-title">
-      <a href="/blog/2012/10/28/creating-a-virtualenv-for-use-with-django-1-dot-4-and-possibly-heroku/">Creating a Virtualenv for Use With Django 1.4 and (Possibly) Heroku</a>
-    </h1>
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-28T05:25:00-07:00" pubdate data-updated="true">Oct 28<span>th</span>, 2012</time>
-</div>
-
-<div class="post-content"><p>Say you want to start a project and you want to use Heroku for your quick &#8216;proof of concept&#8217;.
-You will need virtual environment.</p>
-
-<p>On my Mac 10.8.2, I did:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo easy_install virtualenv
-</span><span class='line'>sudo easy_install pip</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Then to create the virtual environment called venv (while on my project folder):</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>virtualenv --distribute venv</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Then to activate the virutal environment:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>source venv/bin/activate</span></code></pre></td></tr></table></div></figure>
-
-
-<p>
-By now, my propmt&#8217;s prefix would be appended with (venv) and I am inside my virtual environment. I can now proceed to install Django, by executing</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>pip install Django</span></code></pre></td></tr></table></div></figure>
-
-
-<p>After installing Django, I can freeze the requirements so Heroku would know which packages to install whenever I do a push by executing</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>pip freeze &gt; requirements.txt</span></code></pre></td></tr></table></div></figure>
-
-
-<p>
-and adding the output file(requirements.txt) to the repository.</p>
-
-<p>By using a virtualenv, you can have different projects use different python installations(2.x and 3.x) in a single development machine, and also replicate your exact production environment. Heroku uses the requirements file to install the specific versions of the modules which in turn makes everything a replica of your development environment.</p>
-</div>
- </div>
-
 
 <div id="pagination">
   
@@ -294,6 +289,10 @@ and adding the output file(requirements.txt) to the repository.</p>
       <ul>
         
           <li>
+            <a href="/blog/2014/02/17/top-10-ips-in-nginx-access-log/">Top 10 Ips in Nginx access log</a>
+          </li>
+        
+          <li>
             <a href="/blog/2013/09/25/env-python2-no-such-file-or-directory/">env: python2: No such file or directory</a>
           </li>
         
@@ -307,10 +306,6 @@ and adding the output file(requirements.txt) to the repository.</p>
         
           <li>
             <a href="/blog/2012/11/19/curl-put-request-with-p12-pkcs-number-12-certificate-using-php/">cURL PUT request with P12 (PKCS #12) certificate using PHP</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2012/11/11/spell-check-vim/">Spell Check using VIM</a>
           </li>
         
       </ul>

@@ -7,7 +7,7 @@
   <meta name="author" content="Andre Brutus">
   <meta name="google-site-verification" content="mRTgsVG1EorsoR2e5W1z4JNzankQ9HVxtN6b0Xgtkgs" />
   
-  <meta name="description" content="Programming Every Day Aug 22nd, 2012 Today I begin my challenge to write code daily(outside of the code I write for work). The main problem with &hellip;">
+  <meta name="description" content="Creating a Virtualenv for Use With Django 1.4 and (Possibly) Heroku Oct 28th, 2012 Say you want to start a project and you want to use Heroku for &hellip;">
   
   
 
@@ -51,6 +51,71 @@
 </ul>
 
     <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2012/10/28/creating-a-virtualenv-for-use-with-django-1-dot-4-and-possibly-heroku/">Creating a Virtualenv for Use With Django 1.4 and (Possibly) Heroku</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-28T05:25:00-07:00" pubdate data-updated="true">Oct 28<span>th</span>, 2012</time>
+</div>
+
+<div class="post-content"><p>Say you want to start a project and you want to use Heroku for your quick &#8216;proof of concept&#8217;.
+You will need virtual environment.</p>
+
+<p>On my Mac 10.8.2, I did:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo easy_install virtualenv
+</span><span class='line'>sudo easy_install pip</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then to create the virtual environment called venv (while on my project folder):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>virtualenv --distribute venv</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then to activate the virutal environment:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>source venv/bin/activate</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+By now, my propmt&#8217;s prefix would be appended with (venv) and I am inside my virtual environment. I can now proceed to install Django, by executing</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>pip install Django</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After installing Django, I can freeze the requirements so Heroku would know which packages to install whenever I do a push by executing</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>pip freeze &gt; requirements.txt</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+and adding the output file(requirements.txt) to the repository.</p>
+
+<p>By using a virtualenv, you can have different projects use different python installations(2.x and 3.x) in a single development machine, and also replicate your exact production environment. Heroku uses the requirements file to install the specific versions of the modules which in turn makes everything a replica of your development environment.</p>
+</div>
+ </div>
 
   
   <div class="post"> <div class="post-header">
@@ -145,56 +210,10 @@
 </div>
  </div>
 
-  
-  <div class="post"> <div class="post-header">
-  
-    <h1 class="post-title">
-      <a href="/blog/2012/06/19/ninjas-cutting-onions/">On Blogging Engineering</a>
-    </h1>
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-19T08:26:00-07:00" pubdate data-updated="true">Jun 19<span>th</span>, 2012</time>
-</div>
-
-<div class="post-content"><p>You&#8217;ve landed. Here I blog mostly about issues that arise out of the technology I employ(Django, CodeIgniter, jQuery, Bootstrap) and the ones I&#8217;m learning (Scala and Ruby). Ocassionally, you&#8217;ll hear me describe architectures.
-Drop me a line in the comments, twitter or github. I&#8217;ll be around <strong>(I promise)</strong></p>
-
-<p>And here is a hello world for syntax highlighting:</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="c1">// Operator for Overloading</span>
-</span><span class='line'><span class="k">object</span> <span class="nc">operator</span>
-</span><span class='line'><span class="o">{</span>
-</span><span class='line'>  <span class="k">def</span> <span class="n">operation</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
-</span><span class='line'>    <span class="n">a</span><span class="o">+</span><span class="n">b</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
- </div>
-
 
 <div id="pagination">
+  
+    <a class="prev" href="/blog/page/4/">&laquo;Previous</a>
   
   
     <a class="next" href="/blog/page/2/">Next&raquo;</a>
@@ -213,6 +232,10 @@ Drop me a line in the comments, twitter or github. I&#8217;ll be around <strong>
       <ul>
         
           <li>
+            <a href="/blog/2014/02/17/top-10-ips-in-nginx-access-log/">Top 10 Ips in Nginx access log</a>
+          </li>
+        
+          <li>
             <a href="/blog/2013/09/25/env-python2-no-such-file-or-directory/">env: python2: No such file or directory</a>
           </li>
         
@@ -226,10 +249,6 @@ Drop me a line in the comments, twitter or github. I&#8217;ll be around <strong>
         
           <li>
             <a href="/blog/2012/11/19/curl-put-request-with-p12-pkcs-number-12-certificate-using-php/">cURL PUT request with P12 (PKCS #12) certificate using PHP</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2012/11/11/spell-check-vim/">Spell Check using VIM</a>
           </li>
         
       </ul>

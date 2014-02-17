@@ -3,15 +3,15 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
-  <title>Andre Brutus - Creating a Virtualenv for Use With Django 1.4 and (Possibly) Heroku</title>
+  <title>Andre Brutus - Top 10 Ips in Nginx Access Log</title>
   <meta name="author" content="Andre Brutus">
   <meta name="google-site-verification" content="mRTgsVG1EorsoR2e5W1z4JNzankQ9HVxtN6b0Xgtkgs" />
   
-  <meta name="description" content="Creating a Virtualenv for Use With Django 1.4 and (Possibly) Heroku Oct 28th, 2012 Say you want to start a project and you want to use Heroku for &hellip;">
+  <meta name="description" content="Top 10 Ips in Nginx Access Log Feb 17th, 2014 This is an useful query for when you are getting hammered by scripts/bots. I will likely use it again &hellip;">
   
   
 
-  <link rel="canonical" href="http://abrut.us/blog/2012/10/28/creating-a-virtualenv-for-use-with-django-1-dot-4-and-possibly-heroku">
+  <link rel="canonical" href="http://abrut.us/blog/2014/02/17/top-10-ips-in-nginx-access-log">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Andre Brutus" type="application/atom+xml">
@@ -52,7 +52,7 @@
 
     <div id="main"> <div class="post-header">
   
-    <h1 class="post-title">Creating a Virtualenv for Use With Django 1.4 and (Possibly) Heroku</h1>
+    <h1 class="post-title">Top 10 Ips in Nginx Access Log</h1>
   
   
 
@@ -66,49 +66,16 @@
   
 
 
-<time datetime="2012-10-28T05:25:00-07:00" pubdate data-updated="true">Oct 28<span>th</span>, 2012</time>
+<time datetime="2014-02-17T12:57:00-08:00" pubdate data-updated="true">Feb 17<span>th</span>, 2014</time>
 </div>
 
-<div class="post-content"><p>Say you want to start a project and you want to use Heroku for your quick &#8216;proof of concept&#8217;.
-You will need virtual environment.</p>
-
-<p>On my Mac 10.8.2, I did:</p>
+<div class="post-content"><p>This is an useful query for when you are getting hammered by scripts/bots. I will likely use it again, so here it goes.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo easy_install virtualenv
-</span><span class='line'>sudo easy_install pip</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cut -d ' ' -f1 /var/log/nginx/nginx-access.log | sort | uniq -c | sort -nr | head -10 | nl</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Then to create the virtual environment called venv (while on my project folder):</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>virtualenv --distribute venv</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Then to activate the virutal environment:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>source venv/bin/activate</span></code></pre></td></tr></table></div></figure>
-
-
-<p>
-By now, my propmt&#8217;s prefix would be appended with (venv) and I am inside my virtual environment. I can now proceed to install Django, by executing</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>pip install Django</span></code></pre></td></tr></table></div></figure>
-
-
-<p>After installing Django, I can freeze the requirements so Heroku would know which packages to install whenever I do a push by executing</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>pip freeze &gt; requirements.txt</span></code></pre></td></tr></table></div></figure>
-
-
-<p>
-and adding the output file(requirements.txt) to the repository.</p>
-
-<p>By using a virtualenv, you can have different projects use different python installations(2.x and 3.x) in a single development machine, and also replicate your exact production environment. Heroku uses the requirements file to install the specific versions of the modules which in turn makes everything a replica of your development environment.</p>
+<p><a href="http://www.commandlinefu.com/commands/view/290/see-the-top-10-ip-addresses-in-a-web-access-log">source</a></p>
 </div>
 
 
@@ -119,7 +86,7 @@ and adding the output file(requirements.txt) to the repository.</p>
 <span class="categories">
   Categories:
   
-    <a class='category' href='/blog/categories/programming/'>Programming</a>, <a class='category' href='/blog/categories/programming-every-day/'>Programming Every Day</a>
+    <a class='category' href='/blog/categories/programming/'>Programming</a>
   
 </span>
 
@@ -213,8 +180,8 @@ and adding the output file(requirements.txt) to the repository.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://abrut.us/blog/2012/10/28/creating-a-virtualenv-for-use-with-django-1-dot-4-and-possibly-heroku/';
-        var disqus_url = 'http://abrut.us/blog/2012/10/28/creating-a-virtualenv-for-use-with-django-1-dot-4-and-possibly-heroku/';
+        var disqus_identifier = 'http://abrut.us/blog/2014/02/17/top-10-ips-in-nginx-access-log/';
+        var disqus_url = 'http://abrut.us/blog/2014/02/17/top-10-ips-in-nginx-access-log/';
         var disqus_script = 'embed.js';
       
     (function () {
