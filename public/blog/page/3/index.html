@@ -7,7 +7,8 @@
   <meta name="author" content="Andre Brutus">
   <meta name="google-site-verification" content="mRTgsVG1EorsoR2e5W1z4JNzankQ9HVxtN6b0Xgtkgs" />
   
-  <meta name="description" content="Creating a Virtualenv for Use With Django 1.4 and (Possibly) Heroku Oct 28th, 2012 Say you want to start a project and you want to use Heroku for &hellip;">
+  <meta name="description" content="Spell Check Using VIM Nov 11th, 2012 It should be no secret to anyone that my main editor for programming (and
+writing blog posts) is VIM. Given &hellip;">
   
   
 
@@ -51,6 +52,79 @@
 </ul>
 
     <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2012/11/11/spell-check-vim/">Spell Check Using VIM</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-11T00:02:00-08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2012</time>
+</div>
+
+<div class="post-content"><p>It should be no secret to anyone that my main editor for programming (and
+writing blog posts) is VIM. Given that I have allowed personal posts to
+occasionally feature on my blog, I have written some lengthy blog posts. Long posts usually
+mean lots of spelling mistakes, and there are some commands that have helped me on the way.</p>
+
+<p>To enable spell check (will highlight misspelled words)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:set spell</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here&#8217;s a sample output:</p>
+
+<p><img src="http://cl.ly/image/3q1u1F0B0Y3T/Screen%20Shot%202012-11-11%20at%2012.19.11%20AM.png" alt="Sample of VIM's spellcheck'" /></p>
+
+<p>To advance to the next misspelled word</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>]s</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or to go to the previous word</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[s</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To show spelling suggestions for currently selected misspelled word:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>z=</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="http://cl.ly/image/2o1Z2G3O0138/Screen%20Shot%202012-11-11%20at%2012.21.05%20AM.png" alt="Spelling Suggestions in VIM" width="50%" /></p>
+
+<p>And to add a word to VIM&#8217;s dictionary:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>zg</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And of course, to turn off spellcheck:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:set nospell</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Also, if you don&#8217;t know it by now, this Blog runs on Octopress and is published via git. If you find a post that needs &#8216;refactoring&#8217;, feel free to <a href="https://github.com/abrutus/abrut.us/tree/master/source/_posts">fork</a> the repository and do a pull request. Gotta love open source!</p>
+</div>
+ </div>
 
   
   <div class="post"> <div class="post-header">
@@ -149,67 +223,6 @@ and adding the output file(requirements.txt) to the repository.</p>
 </div>
  </div>
 
-  
-  <div class="post"> <div class="post-header">
-  
-    <h1 class="post-title">
-      <a href="/blog/2012/06/22/broken-windows-theory-and-software-engineering/">The Broken Windows Theory and Software Engineering</a>
-    </h1>
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-22T01:56:00-07:00" pubdate data-updated="true">Jun 22<span>nd</span>, 2012</time>
-</div>
-
-<div class="post-content"><p>Recently, I stumbled upon an interesting email. It was in Spanish(<a href="http://www.anundis.com/profiles/blogs/un-mundo-sin-las-ventanas-rotas">found it</a>) so be merciful with me as I attempt to translate and paraphrase:</p>
-
-<blockquote><p>1969, Stanford: Professor Philip Zimbardo conducted an experiment in social psychology. He left two identical cars(same make,model, color) in two different neighborhoods(Bronx-NY, and Palo Alto-CA). Two identical cars in two neighborhoods with very different populations, along with a team of specialists in social psychology to study the behavior of people at each site.</p>
-
-<p>It turned out that the car in the Bronx began to be vandalized within hours: lost the tires, engine, mirrors, radio. All that was usable was taken away, and what wasn&#8217;t usable was destroyed. The car in Palo alto remained intact.</p>
-
-<p>Commonly, people attribute poverty to cause crime, but the experiment wasn&#8217;t over. With the Palo Alto car unscratched and the Bronx car destroyed, the researchers decided to break a window in the Palo Alto Car. The result was that this action unleashed the same process as in the Bronx: theft, violence and vandalism reduced the vehicle to the same state as in the poor neighborhood.</p>
-
-<p>Why was the broken car window in a supposedly safe neighborhood able to unleash such a criminal reaction?</p></blockquote>
-
-<!-- more -->
-
-
-<blockquote><p>It isn&#8217;t poverty, it&#8217;s obviously something to do with psychology, human behavior and social relations</p>
-
-<p>A broken window in an abandoned car conveys an idea of deterioration, lack of interest, carelessness that breaks codes of coexistence, and it resembles the absence of law, norm or rules. Every new attack suffered by the auto reaffirms and multiplies the idea, until the escalation of events, getting worse, becomes uncontrollable, leading to irrational violence.</p>
-
-<p>In later experiments (James Q. Wilson and George Kelling) developed the &#8216;broken windows theory&#8217;, from a criminology point of view concluding that crime is higher in areas where neglect, dirt, disorder and abuse are higher.</p></blockquote>
-
-<p>This article got my mind running. What If the same principle is applied to Software Engineering?</p>
-
-<p>Suddenly my mind wandered off to that function I left undocumented, that class that  needed refactoring. I&#8217;m not a perfect programmer. Will the future programmers(or some newbs) vandalize my code? Will I be ashamed to look at my creation?</p>
-
-<p>Probably. Also, you don&#8217;t need a &#8220;society&#8221; of programmers to make this theory a reality. Just you and your future you, looking back at beta version of your own self in code. You will see the broken windows, but will you fix those broken windows? Or, will they influence you to carelessness?</p>
-
-<p>Some hope (from the <a href="http://en.wikipedia.org/wiki/Broken_windows_theory">Wiki</a> article):</p>
-
-<blockquote><p>George L. Kelling [the author of the theory], was hired as a consultant to the New York City Transit Authority in 1985, and measures to test the broken windows theory were implemented by David Gunn. The presence of graffiti was intensively targeted, and the subway system was cleaned from 1984 until 1990.</p>
-
-<p>According to the 2001 study of crime trends in New York by George Kelling and William Sousa,[3] rates of both petty and serious crime fell suddenly and significantly, and continued to drop for the following ten years.</p></blockquote>
-
-<p>And apparently similar success occurred in Albuquerque, Massachusetts(20% drop in calls to the police) and even the Netherlands.</p>
-
-<p>Feel free to drop me a line in the comment section below.</p>
-
-<p>UPDATE: From the comments (below and reddit), it seems that this topic was covered previously by the Pragmatic Programmer and I recommend you <a href="http://pragprog.com/the-pragmatic-programmer/extracts/software-entropy">read it here</a>.</p>
-</div>
- </div>
-
 
 <div id="pagination">
   
@@ -232,6 +245,10 @@ and adding the output file(requirements.txt) to the repository.</p>
       <ul>
         
           <li>
+            <a href="/blog/2014/04/28/rabin-karp-example-in-java/">Rabin-Karp example in Java</a>
+          </li>
+        
+          <li>
             <a href="/blog/2014/02/17/top-10-ips-in-nginx-access-log/">Top 10 Ips in Nginx access log</a>
           </li>
         
@@ -245,10 +262,6 @@ and adding the output file(requirements.txt) to the repository.</p>
         
           <li>
             <a href="/blog/2012/11/20/301-redirects-with-octopress-on-heroku/">301 Redirects with Octopress on Heroku</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2012/11/19/curl-put-request-with-p12-pkcs-number-12-certificate-using-php/">cURL PUT request with P12 (PKCS #12) certificate using PHP</a>
           </li>
         
       </ul>

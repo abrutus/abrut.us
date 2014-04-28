@@ -3,7 +3,7 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
-  <title>Andre Brutus - Blog</title>
+  <title>Andre Brutus - Rabin-Karp Example in Java</title>
   <meta name="author" content="Andre Brutus">
   <meta name="google-site-verification" content="mRTgsVG1EorsoR2e5W1z4JNzankQ9HVxtN6b0Xgtkgs" />
   
@@ -11,7 +11,7 @@
   
   
 
-  <link rel="canonical" href="http://abrut.us">
+  <link rel="canonical" href="http://abrut.us/blog/2014/04/28/rabin-karp-example-in-java">
   <link href="/favicon.ico" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Andre Brutus" type="application/atom+xml">
@@ -42,7 +42,7 @@
 <div class="clear"></div>
 <ul id="nav">
   
-    <li> <a href="/" class="current">blog</a> </li>
+    <li> <a href="/">blog</a> </li>
   
 
   
@@ -50,14 +50,9 @@
   
 </ul>
 
-    <div id="main"> 
-
+    <div id="main"> <div class="post-header">
   
-  <div class="post"> <div class="post-header">
-  
-    <h1 class="post-title">
-      <a href="/blog/2014/04/28/rabin-karp-example-in-java/">Rabin-Karp Example in Java</a>
-    </h1>
+    <h1 class="post-title">Rabin-Karp Example in Java</h1>
   
   
 
@@ -155,81 +150,36 @@
 </span></code></pre></td></tr></table></div></figure>
 
 </div>
- </div>
 
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
   
-  <div class="post"> <div class="post-header">
+    <a class='category' href='/blog/categories/programming/'>programming</a>
   
-    <h1 class="post-title">
-      <a href="/blog/2014/02/17/top-10-ips-in-nginx-access-log/">Top 10 Ips in Nginx Access Log</a>
-    </h1>
-  
-  
+</span>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-17T12:57:00-08:00" pubdate data-updated="true">Feb 17<span>th</span>, 2014</time>
+    
+      <div class="sharing">
+<span class='st_reddit_hcount' displayText='Reddit'></span>
+<span class='st_twitter_hcount' displayText='Tweet'></span>
 </div>
 
-<div class="post-content"><p>This is an useful query for when you are getting hammered by scripts/bots. I will likely use it again, so here it goes.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cut -d ' ' -f1 /var/log/nginx/nginx-access.log | sort | uniq -c | sort -nr | head -10 | nl</span></code></pre></td></tr></table></div></figure>
-
-
-<p><a href="http://www.commandlinefu.com/commands/view/290/see-the-top-10-ip-addresses-in-a-web-access-log">source</a></p>
-</div>
- </div>
+    
+  </div>
+  <div class="clear"></div>
 
   
-  <div class="post"> <div class="post-header">
-  
-    <h1 class="post-title">
-      <a href="/blog/2013/09/25/env-python2-no-such-file-or-directory/">Env: Python2: No Such File or Directory</a>
-    </h1>
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-25T16:29:00-07:00" pubdate data-updated="true">Sep 25<span>th</span>, 2013</time>
-</div>
-
-<div class="post-content"><p>Tried out asciinema and encountered the <code>env: python2: No such file or directory</code> error. Asciinema must be attempting to use python from the wrong symlink. To create it,</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo ln -s /usr/bin/python /usr/bin/python2</span></code></pre></td></tr></table></div></figure>
-
-
-<p>(assuming /usr/bin/python is python 2.x). If you dont know where python and it is not located in /usr/bin/python, run <code>which python</code>. To find out which python you have, run <code>python --version</code>. Combining both commands, you could run:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo ln -s `which python` /usr/bin/python2</span></code></pre></td></tr></table></div></figure>
-
-</div>
- </div>
-
-
-<div id="pagination">
-  
-    <a class="prev" href="/blog/page/2/">&laquo;Previous</a>
-  
+    <div id="comments">
+      <h2>Comments</h2>
+      <div id="disqus_thread" aria-live="polite"></div>
+    </div>
   
 </div>
  </div>
@@ -302,7 +252,10 @@
       var disqus_shortname = 'abrutuss';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://abrut.us/blog/2014/04/28/rabin-karp-example-in-java/';
+        var disqus_url = 'http://abrut.us/blog/2014/04/28/rabin-karp-example-in-java/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

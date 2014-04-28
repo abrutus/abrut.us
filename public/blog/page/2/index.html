@@ -7,7 +7,7 @@
   <meta name="author" content="Andre Brutus">
   <meta name="google-site-verification" content="mRTgsVG1EorsoR2e5W1z4JNzankQ9HVxtN6b0Xgtkgs" />
   
-  <meta name="description" content="301 Redirects With Octopress on Heroku Nov 20th, 2012 I decided to move over my personal blog entries outside this blog. Following good migration &hellip;">
+  <meta name="description" content="How to Reset Stats-rrdb Sep 25th, 2013 For some odd reason, I was unable to start the stats-rrdb daemon (it said that it started but it would die &hellip;">
   
   
 
@@ -51,6 +51,46 @@
 </ul>
 
     <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2013/09/25/how-to-reset-stats-rrdb/">How to Reset Stats-rrdb</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-25T10:38:00-07:00" pubdate data-updated="true">Sep 25<span>th</span>, 2013</time>
+</div>
+
+<div class="post-content"><p>For some odd reason, I was unable to start the stats-rrdb daemon (it said that it started but it would die immediately afterwards).</p>
+
+<p>After tailing the logs, I found this slightly cryptic error message.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Server status update thread exception: Unexpected rrdb metric block pos 648 pos_ts: 1379698992 (expected from tuple: 1379697192)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I attempted changing some configs to no avail, so the last resource was to reset the metrics. Given that this was on my VM and no important metrics were being recorded for me, I resorted to clearing all the data (<strong>don&#8217;t do this in your production environment, unless you don&#8217;t care about losing all your data</strong>).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo rm -rf /var/stats-rrdb/*</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After clearing all the data, I was able to restart the stats-rrdb. Best of luck!</p>
+</div>
+ </div>
 
   
   <div class="post"> <div class="post-header">
@@ -194,79 +234,6 @@ some time:</p>
 </div>
  </div>
 
-  
-  <div class="post"> <div class="post-header">
-  
-    <h1 class="post-title">
-      <a href="/blog/2012/11/11/spell-check-vim/">Spell Check Using VIM</a>
-    </h1>
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-11T00:02:00-08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2012</time>
-</div>
-
-<div class="post-content"><p>It should be no secret to anyone that my main editor for programming (and
-writing blog posts) is VIM. Given that I have allowed personal posts to
-occasionally feature on my blog, I have written some lengthy blog posts. Long posts usually
-mean lots of spelling mistakes, and there are some commands that have helped me on the way.</p>
-
-<p>To enable spell check (will highlight misspelled words)</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>:set spell</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Here&#8217;s a sample output:</p>
-
-<p><img src="http://cl.ly/image/3q1u1F0B0Y3T/Screen%20Shot%202012-11-11%20at%2012.19.11%20AM.png" alt="Sample of VIM's spellcheck'" /></p>
-
-<p>To advance to the next misspelled word</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>]s</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or to go to the previous word</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>[s</span></code></pre></td></tr></table></div></figure>
-
-
-<p>To show spelling suggestions for currently selected misspelled word:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>z=</span></code></pre></td></tr></table></div></figure>
-
-
-<p><img src="http://cl.ly/image/2o1Z2G3O0138/Screen%20Shot%202012-11-11%20at%2012.21.05%20AM.png" alt="Spelling Suggestions in VIM" width="50%" /></p>
-
-<p>And to add a word to VIM&#8217;s dictionary:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>zg</span></code></pre></td></tr></table></div></figure>
-
-
-<p>And of course, to turn off spellcheck:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>:set nospell</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Also, if you don&#8217;t know it by now, this Blog runs on Octopress and is published via git. If you find a post that needs &#8216;refactoring&#8217;, feel free to <a href="https://github.com/abrutus/abrut.us/tree/master/source/_posts">fork</a> the repository and do a pull request. Gotta love open source!</p>
-</div>
- </div>
-
 
 <div id="pagination">
   
@@ -289,6 +256,10 @@ mean lots of spelling mistakes, and there are some commands that have helped me 
       <ul>
         
           <li>
+            <a href="/blog/2014/04/28/rabin-karp-example-in-java/">Rabin-Karp example in Java</a>
+          </li>
+        
+          <li>
             <a href="/blog/2014/02/17/top-10-ips-in-nginx-access-log/">Top 10 Ips in Nginx access log</a>
           </li>
         
@@ -302,10 +273,6 @@ mean lots of spelling mistakes, and there are some commands that have helped me 
         
           <li>
             <a href="/blog/2012/11/20/301-redirects-with-octopress-on-heroku/">301 Redirects with Octopress on Heroku</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2012/11/19/curl-put-request-with-p12-pkcs-number-12-certificate-using-php/">cURL PUT request with P12 (PKCS #12) certificate using PHP</a>
           </li>
         
       </ul>
